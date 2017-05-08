@@ -1,0 +1,107 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Cards That Never Were</title>
+        <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
+        <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    </h:head>
+    <h:body>
+      <h:panelGroup rendered="#{not login.isLogin()}">
+        <div id="contact">
+            <span class="glyphicon glyphicon-log-in"></span><h:link value="Login" outcome="login" />
+        </div>
+       </h:panelGroup>
+       <h:form>
+           <h:outputText value="Welcome Back, #{login.user}" rendered="#{login.isLogin()}" />
+           <h:commandLink value="Logout" rendered="#{login.isLogin()}" action="#{login.logout()}" />
+       </h:form>
+        
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span> 
+                    </button>
+                    <h:link class="navbar-brand" outcome="index" >
+                        <img class="img-responsive logo" src="img/logo_1.png"/>
+                    </h:link>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><h:link value="Home" outcome="index" /></li>
+                        <li><h:link value="Business" outcome="business" /></li>
+                        <li><h:link value="Store" outcome="store" /></li>
+                        <li><h:link value="Blog" outcome="blog" /></li>
+                        <li><h:link value="Cart" outcome="cart" /></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <div class="content">
+            
+            <div class="row sec-two">
+                
+                <h:form>
+                    <ui:repeat value="#{shoppingCart.cart}" var="i">
+                        <div class="col-md-8">
+                            <div class="row">
+                            <div class="col-md-4">
+                                <h:graphicImage class="img-responsive" value="#{i.p.figurePath}"/>
+                            </div>
+                            <div class="col-md-4">
+                                Item: #{i.p.figureName} <br/>
+                                Price: $#{i.p.cardPrice} <br/>
+                                Quantity: <h:inputText value="#{i.quantity}" style="width:20px"/><br/>
+                                 <h:commandButton value="Delete" action="#{shoppingCart.remove(i)}"/>
+                            </div>
+                            </div>
+                        </div>
+                    </ui:repeat>
+                        <div class="col-md-4">
+                            Total: $#{shoppingCart.total}<br/>
+                            <h:commandButton value="Update" action="#{shoppingCart.update()}"/><br/>
+                            <h:commandButton value="Payment" action="#{shoppingCart.payment()}"/><br/>
+                            <h:link value="Continue Shopping" outcome="store"/>
+                        </div>
+                </h:form>
+    
+            </div>
+            
+                        <div class="row sec-one">
+                <div class="col-sm-4">
+                    <h4>Include</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Description</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Shipping</h4>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+                </div>
+            </div>
+            
+	</div>
+        
+        <footer>
+            <p>Copyright © 2017 Cards That Never Were, All Rights Reserved.</p>
+	</footer>
+        
+    </h:body>
+</html>
+

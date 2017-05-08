@@ -1,0 +1,303 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+    <h:head>
+        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"/>
+        <title>Cards That Never Were</title>
+        <link rel="stylesheet" type="text/css" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"/>
+        <link rel="stylesheet" type="text/css" href="style.css"/>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    </h:head>
+    <h:body>
+        
+        <h:panelGroup rendered="#{not login.isLogin()}">
+        <div id="contact">
+            <span class="glyphicon glyphicon-log-in"></span><h:link value="Login" outcome="login" />
+        </div>
+       </h:panelGroup>
+       <h:form>
+           <h:outputText value="Welcome Back, #{login.user}" rendered="#{login.isLogin()}" />
+           <h:commandLink value="Logout" rendered="#{login.isLogin()}" action="#{login.logout()}" />
+       </h:form>
+        
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span> 
+                    </button>
+                    <h:link class="navbar-brand" outcome="index" >
+                        <img class="img-responsive logo" src="img/logo_1.png"/>
+                    </h:link>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><h:link value="Home" outcome="index" /></li>
+                        <li><h:link value="Business" outcome="business" /></li>
+                        <li><h:link value="Store" outcome="store" /></li>
+                        <li><h:link value="Blog" outcome="blog" /></li>
+                        <li><h:link value="Cart" outcome="cart" /></li>
+                        <!--<li><ui:insert name="login" >
+                          <ui:include src="login-bar.xhtml" />
+                          </ui:insert>
+                        </li>-->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        
+        <header id="index-header" class="container-fluid">
+            <div id="index-header-text">
+                <h1>Cards That Never Were</h1>
+                <h4> Some cool headline right here</h4>
+                <button type="button" class="index-btn">
+                    <h:link value="ABOUT US" outcome="business" />
+                </button>
+                <button type="button" class="index-btn">
+                    <h:link value="SHOP NOW" outcome="store" />
+                </button>
+            </div>
+        </header>
+
+        <div class="content">
+            <div class="divider"></div>
+            <div class="row sec-one">
+	    	<div class="col-sm-12 home-info">
+                    <h1>Welcome</h1>
+                    <hr/>
+                    <p>Consistency and craftsmanship built Cards That Never Were’s 
+                        reputation within the Sports Memorbilia community, a reputation we 
+                        relentlessly pursue to keep through a dedication to 
+                        superior quality and an understanding of the customer’s needs.
+                        We handcraft that nostalgic-feeling in each card we produce.</p>
+	    	</div>
+            </div>
+            
+            <div class="row sec-two-index">
+                <div class="col-md-5">
+                    <div class="card">
+                        <img class="img-responsive img-thumbnail" src="img/barry-larkin.jpg" alt="Barry Larkin"/>
+                    </div>
+                </div>
+                <div class="col-md-7">
+                    <div id="card-info">
+                        <h2>Customized for you!</h2>
+                        <h6>nostalgic playing cards</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row sec-two">
+	    	<div class="col-sm-12 home-info">
+                    <h2>Featured Cards</h2>
+                    <hr/>
+                    
+                    <div id="carousel-example" class="carousel slide hidden-xs carousel-no-blue" data-ride="carousel">
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner">
+                            <div class="item active">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="img/details/BCConnorsThumb.jpg" class="img-responsive" alt="a" />
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price col-md-6">
+                                                        <h5>
+                                                            Sample Product</h5>
+                                                        <h5 class="price-text-color">
+                                                            $199.99</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="img/details/TBLarkinThumb.jpg" class="img-responsive" alt="a" />
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price col-md-6">
+                                                        <h5>
+                                                            Sample Product</h5>
+                                                        <h5 class="price-text-color">
+                                                            $199.99</h5>
+                                                    </div>
+                                                    <div class="rating hidden-sm col-md-6">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="img/details/THAaronThumb.jpg" class="img-responsive" alt="a" />
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price col-md-6">
+                                                        <h5>
+                                                            Sample Product</h5>
+                                                        <h5 class="price-text-color">
+                                                            $199.99</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="img/details/TSMusialThumb.jpg" class="img-responsive" alt="a" />
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price col-md-6">
+                                                        <h5>
+                                                            Sample Product</h5>
+                                                        <h5 class="price-text-color">
+                                                            $199.99</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item">
+                                <div class="row">
+                                    <div class="col-sm-3">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="img/details/TEGaedelThumb.jpg" class="img-responsive" alt="a" />
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price col-md-6">
+                                                        <h5>
+                                                            Sample Product</h5>
+                                                        <h5 class="price-text-color">
+                                                            $199.99</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="img/details/TBLarkinThumb.jpg" class="img-responsive" alt="a" />
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price col-md-6">
+                                                        <h5>
+                                                            Sample Product</h5>
+                                                        <h5 class="price-text-color">
+                                                            $199.99</h5>
+                                                    </div>
+                                                    <div class="rating hidden-sm col-md-6">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="img/details/THAaronThumb.jpg" class="img-responsive" alt="a" />
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price col-md-6">
+                                                        <h5>
+                                                            Sample Product</h5>
+                                                        <h5 class="price-text-color">
+                                                            $199.99</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-3">
+                                        <div class="col-item">
+                                            <div class="photo">
+                                                <img src="img/details/ISuzukiThumb.jpg" class="img-responsive" alt="a" />
+                                            </div>
+                                            <div class="info">
+                                                <div class="row">
+                                                    <div class="price col-md-6">
+                                                        <h5>
+                                                            Sample Product</h5>
+                                                        <h5 class="price-text-color">
+                                                            $199.99</h5>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-9"></div>
+                        <div class="col-md-3">
+                            <!-- Controls -->
+                            <div class="controls pull-right hidden-xs">
+                                <a class="left btn btn-success" 
+                                   href="#carousel-example" data-slide="prev">
+                                    <span class="glyphicon glyphicon-chevron-left"></span></a>
+                                
+                                <a class="right btn btn-success" 
+                                    href="#carousel-example" data-slide="next">
+                                    <span class="glyphicon glyphicon-chevron-right"></span></a>
+                            </div>
+                        </div>
+                    </div>
+	    	</div>
+            </div>
+            
+            <div class="row sec-one">
+	    	<div class="col-md-6 home-info">
+                    <h1>Want to Contact Us?</h1>
+                    <hr/>
+                    
+                    <p>
+                       Wondering how these cards are made? Do you want to us to 
+                       create custom card for you? Email us and we will do whatever 
+                       we can to satisfy your questions!
+                    </p>
+                    
+                    <a href="mailto:jackopkins@yahoo.com?Subject=Hello%20again">
+                        <button type="button" class="btn btn-block btn-primary">
+                            <span class="glyphicon glyphicon-envelope"></span> 
+                            CONTACT US
+                        </button>
+                    </a>
+	    	</div>
+                <div class="col-md-6">
+                    <img class="img-responsive img-thumbnail" src="img/contact-computer-temp.jpg"/>
+                </div>
+            </div>
+            
+	</div>
+        
+        <footer>
+            <p>Copyright © 2017 Cards That Never Were, All Rights Reserved.</p>
+	</footer>
+        
+    </h:body>
+</html>
+
