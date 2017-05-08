@@ -20,11 +20,6 @@ import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpSession;
 
 
-
-/**
- *
- * @author Estefany
- */
 @ManagedBean
 @SessionScoped
 public class Login implements Serializable {
