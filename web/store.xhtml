@@ -3,7 +3,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Cards That Never Were</title>
         <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
@@ -92,9 +93,6 @@
                             <h:graphicImage value="#{card.figurePath}" class="group list-group-image thumbnail-product" />
                             <div class="middle">
  
-
-                              
-
                           <div class="modal-content">
                             <div class="modal-header">
                               <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -114,7 +112,9 @@
                                 #{card.figureName}</h4>
                                 <div class="row">
                                     <div class="col-xs-12 col-md-8">
-                                        <p class="lead">#{card.cardPrice}</p>
+                                       <p class="lead">$ <h:outputText value="#{card.cardPrice}">
+                                            <f:convertNumber pattern="#0.00" />
+                                           </h:outputText></p>
                                     </div>
                                     <div class="col-xs-12 col-md-4">
 					 <h:commandButton class="btn btn-success" value="Add to Cart" action="#{shoppingCart.addToCart(card)}"/>
