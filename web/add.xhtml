@@ -3,8 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <title>Cards That Never Were</title>
         <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
@@ -14,7 +13,7 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
     </h:head>
     <h:body>
-       
+           
         <nav class="navbar navbar-default">
             <div class="container-fluid">
                 <div class="navbar-header">
@@ -51,20 +50,23 @@
                              <td colspan="2">
                                 <p>
                                 <label for = "Item">Name of Item</label><br/>
-                                <h:inputText  class="form-control" value ="#{productBean.figureName}" size="50" id="name" required = "true" requiredMessage="Enter the name of the image"></h:inputText>
+                                <h:inputText  class="form-control" value ="#{productBean.figureName}" size="50" id="name"></h:inputText>
+                                <h:message for ="Name of Item"></h:message>
                                 </p>
                                 <p>
-                                 <label for = "location">Image Path(URL)</label><br/>
-                                 <h:inputText class="form-control" value ="#{productBean.figurePath}"  size="50" id="location" required ="true" requiredMessage="Enter the URL path of the image" ></h:inputText>
+                                 <label for = "location">Image Path (Link)</label><br/>
+                                 <h:inputText class="form-control" value ="#{productBean.figurePath}"  size="50" id="location" ></h:inputText>
+                                 <h:message for ="Location of Product"></h:message>
                                 </p>
                                  <p>
                                  <label for = "Price">Price</label><br/>
-                                 <h:inputText class="form-control"  value ="#{productBean.cardPrice}"  size="50" id="price"></h:inputText>
+                                 <h:inputText class="form-control"  value ="#{productBean.cardPrice}"  size="50" id="price" ></h:inputText>
+                                 <h:message for ="Price"></h:message>
                                 </p>
                                  <p>
-                                 <label for = "desc">Details</label><br/>
-                                  <h:inputTextarea class="form-control" cols="50" rows="4" value="#{productBean.cardDescription}" a:maxlength ="465" required="true" requiredMessage="Write a description" ></h:inputTextarea>
-                                
+                                 <label for = "desc">Description</label><br/>
+                                 <h:inputText class="form-control" value ="#{productBean.cardDescription}"  size="50" id="description" ></h:inputText>
+                                 <h:message for ="desc"></h:message>
                                 </p>
 
                              </td>
@@ -74,8 +76,7 @@
                           <tr>
                              <td colspan="2">
                                 <div class="rectangle centered"> 
-                                    <h:commandButton  class="rounded" action = "#{productBean.addToDB()}" value= "Add"></h:commandButton>    <h:commandButton  class="rounded" action = "#{productBean.cancel()}" value= "Cancel" immediate="true"></h:commandButton>      
-  
+                                    <h:commandButton  class="rounded" action = "#{productBean.addToDB()}" value= "Submit"></h:commandButton> <input type="reset" value="Clear" class="rounded"></input>    
                                 </div>
                              </td>
                           </tr>
@@ -87,12 +88,33 @@
 	</div>
         
         <footer>
-            <p>Copyright © 2017 Cards That Never Were, All Rights Reserved.</p>
+            <div id="footer-nav">
+                <div class="row" id="footer-description">
+                    <div class="col-sm-4">
+			<h3> Want to work for us? </h3>
+                        <p>Cards That Never Were is focused on creating sports memorabilia to connect, trade, and share with all types of sports fans.</p>
+                        <button type="button" class="btn btn-primary">Resume</button>
+                        <button type="button" class="btn btn-info">More</button>
+                    </div>
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-2">
+			<h4> LINKS </h4>
+                            <ul id="footer-links">
+                                <li><a href="#">Careers</a></li>
+				<li><a href="#">Support</a></li>
+				<li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                    </div>
+                    <div class="col-sm-3">
+                    <h4> CONTACT </h4>
+                    <p>jackopkins@yahoo.com</p>
+                    </div>
+		</div>
+            </div>
+            <hr/>
+            <p class="copyright">Copyright © 2017 Cards That Never Were, All Rights Reserved.</p>
 	</footer>
         
     </h:body>
 </html>
-
-
-
 

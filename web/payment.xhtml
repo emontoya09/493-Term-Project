@@ -50,10 +50,12 @@
         </nav>
         
         <div class="content">
-            
+            <div class="divider"></div>
             <div class="row sec-two">
                 
-                        <form action="https://www.sandbox.paypal.com/cgi-bin/webscr"
+            <h1>Continue with Payment?</h1>
+                
+            <form action="https://www.sandbox.paypal.com/cgi-bin/webscr"
               method="POST">
             <c:set var="dem" value="1"/>
             <c:forEach items="#{shoppingCart.cart}" var="i">
@@ -82,10 +84,54 @@
     
             </div>
             
+            <div class="row sec-one border-top">
+                <div class="col-sm-4">
+                    <h4>Shipping</h4>
+                    <p>Orders over $10 ship free in the U.S.
+                        Expedited shipping options available at checkout.</p>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Description</h4>
+                    <p>Cards will be sealed and will be safely placed in extra packaging.
+                    If damaged, Cards That Never Were will gladly refund or replace your order.</p>
+                </div>
+                <div class="col-sm-4">
+                    <h4>Refunds</h4>
+                    <p>Cards That Never Were will accept, for return or exchange,
+                    items that are in new condition, unworn, unaltered and free of damages by the customer.
+                    For a full refund or exchange, mail out your item within 21 days from the
+                    receipt of original order.</p>
+                </div>
+            </div>
+            
 	</div>
         
         <footer>
-            <p>Copyright © 2017 Cards That Never Were, All Rights Reserved.</p>
+            <div id="footer-nav">
+                <div class="row" id="footer-description">
+                    <div class="col-sm-4">
+			<h3> Want to work for us? </h3>
+                        <p>Cards That Never Were is focused on creating sports memorabilia to connect, trade, and share with all types of sports fans.</p>
+                        <button type="button" class="btn btn-primary">Resume</button>
+                        <button type="button" class="btn btn-info">More</button>
+                    </div>
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-2">
+			<h4> LINKS </h4>
+                            <ul id="footer-links">
+                                <li><a href="#">Careers</a></li>
+				<li><a href="#">Support</a></li>
+				<li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                    </div>
+                    <div class="col-sm-3">
+                    <h4> CONTACT </h4>
+                    <p>jackopkins@yahoo.com</p>
+                    </div>
+		</div>
+            </div>
+            <hr/>
+            <p class="copyright">Copyright © 2017 Cards That Never Were, All Rights Reserved.</p>
 	</footer>
         
     </h:body>

@@ -3,8 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
       
       xmlns:h="http://xmlns.jcp.org/jsf/html"
-      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
-      xmlns:a="http://xmlns.jcp.org/jsf/passthrough">
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
     <h:head>
         <title>Cards That Never Were</title>
         <link rel="shortcut icon" type="image/png" href="img/favicon.png"/>
@@ -44,43 +43,63 @@
             
             <div class="row sec-two">
                 
-	    	   <h:form>
-                    <fieldset>
-                       <legend>Remove Product</legend>
-                       <table>
-                          <tr>
-                             <td colspan="2">
-                                <p>
-                                <label for = "Item">Name of Item</label><br/>
-                                <h:inputText  class="form-control" value ="#{productBean.figureName}" size="50" id="name" required = "true" requiredMessage="Enter the name of the image"></h:inputText>
-                                </p>
-                                
-                             </td>
-                          </tr>
+                <h:form>
 
+                     <fieldset>
+                        <legend>Remove Product</legend>
+                        <table>
+                           <tr>
+                              <td colspan="2">
+                                 <p>
+                                 <label for = "item">Name of Item</label><br/>
+                                 <h:inputText value ="#{productBean.figureName}" size="50" class="required form-control" id="item"></h:inputText>
 
-                          <tr>
-                             <td colspan="2">
-                                <div class="rectangle centered"> 
-                                    <h:commandButton  class="rounded" action = "#{productBean.removeFromDB()}" value= "Yes"></h:commandButton>    <h:commandButton  class="rounded" action = "#{productBean.cancel()}" value= "Cancel" immediate="true"></h:commandButton>      
-  
-                                </div>
-                             </td>
-                          </tr>
-                       </table>
-                    </fieldset>
+                                 </p>            
+                              </td>
+                           </tr>
+                            <tr>
+                              <td colspan="2">
+                                 <div class="rectangle centered"> 
+                                      <h:commandButton  class="rounded" action = "#{productBean.removeFromDB()}" value= "Submit"></h:commandButton>  <input type="reset" value="Clear" class="rounded"></input>    
+                                 </div>
+                              </td>
+                           </tr>
+
+                        </table>
+                     </fieldset>
                  </h:form>
+    
             </div>
             
 	</div>
         
         <footer>
-            <p>Copyright © 2017 Cards That Never Were, All Rights Reserved.</p>
+            <div id="footer-nav">
+                <div class="row" id="footer-description">
+                    <div class="col-sm-4">
+			<h3> Want to work for us? </h3>
+                        <p>Cards That Never Were is focused on creating sports memorabilia to connect, trade, and share with all types of sports fans.</p>
+                        <button type="button" class="btn btn-primary">Resume</button>
+                        <button type="button" class="btn btn-info">More</button>
+                    </div>
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-2">
+			<h4> LINKS </h4>
+                            <ul id="footer-links">
+                                <li><a href="#">Careers</a></li>
+				<li><a href="#">Support</a></li>
+				<li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                    </div>
+                    <div class="col-sm-3">
+                    <h4> CONTACT </h4>
+                    <p>jackopkins@yahoo.com</p>
+                    </div>
+		</div>
+            </div>
+            <hr/>
+            <p class="copyright">Copyright © 2017 Cards That Never Were, All Rights Reserved.</p>
 	</footer>
         
     </h:body>
 </html>
-
-
-
-

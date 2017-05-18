@@ -4,6 +4,7 @@
       
       xmlns:h="http://xmlns.jcp.org/jsf/html"
       xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:c="http://xmlns.jcp.org/jsp/jstl/core"
       xmlns:f="http://xmlns.jcp.org/jsf/core">
     <h:head>
         <title>Cards That Never Were</title>
@@ -51,19 +52,17 @@
             </div>
         </nav>
         
-        <header class="store-header">
-                <div class="store-info">
-                    <h2>Only For Cool Kids</h2>
-                    <p>bleh bleh bleh bleh bleh bleh</p>
-                </div>
-        </header>
-        
-        <div class="content">
-            
-            <div class="row sec-one">
-	    	<div class="col-sm-12 home-info">
+        <div id="store-section">
+            <div id="store-section-text">
+             <h1> Our Collection </h1> <br/>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
                     <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
+            </div>
+        </div>
+        
+        <div class="content">
+            <div class="row sec-one">
+	    	<div class="col-sm-12 home-info">
 	    	</div>
             </div>
             
@@ -93,6 +92,9 @@
                             <h:graphicImage value="#{card.figurePath}" class="group list-group-image thumbnail-product" />
                             <div class="middle">
  
+
+                              
+
                           <div class="modal-content">
                             <div class="modal-header">
                               <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -112,7 +114,7 @@
                                 #{card.figureName}</h4>
                                 <div class="row">
                                     <div class="col-xs-12 col-md-8">
-                                       <p class="lead">$ <h:outputText value="#{card.cardPrice}">
+                                        <p class="lead">$ <h:outputText value="#{card.cardPrice}">
                                             <f:convertNumber pattern="#0.00" />
                                            </h:outputText></p>
                                     </div>
@@ -138,7 +140,31 @@
                     
    
         <footer>
-            <p>Copyright © 2017 Cards That Never Were, All Rights Reserved.</p>
+            <div id="footer-nav">
+                <div class="row" id="footer-description">
+                    <div class="col-sm-4">
+			<h3> Want to work for us? </h3>
+                        <p>Cards That Never Were is focused on creating sports memorabilia to connect, trade, and share with all types of sports fans.</p>
+                        <button type="button" class="btn btn-primary">Resume</button>
+                        <button type="button" class="btn btn-info">More</button>
+                    </div>
+                    <div class="col-sm-3"></div>
+                    <div class="col-sm-2">
+			<h4> LINKS </h4>
+                            <ul id="footer-links">
+                                <li><a href="#">Careers</a></li>
+				<li><a href="#">Support</a></li>
+				<li><a href="#">Privacy Policy</a></li>
+                            </ul>
+                    </div>
+                    <div class="col-sm-3">
+                    <h4> CONTACT </h4>
+                    <p>jackopkins@yahoo.com</p>
+                    </div>
+		</div>
+            </div>
+            <hr/>
+            <p class="copyright">Copyright © 2017 Cards That Never Were, All Rights Reserved.</p>
 	</footer>
         
     </h:body>
