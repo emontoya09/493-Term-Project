@@ -59,7 +59,9 @@
                             </div>
                             <div class="col-md-5">
                                 <h4>Item: #{i.p.figureName}</h4> <br/>
-                                Price: $#{i.p.cardPrice} <br/>
+                                Price: $<h:outputText value="#{i.p.cardPrice}">
+                                <f:convertNumber pattern="#0.00" />
+                                </h:outputText> <br/>
                                 Quantity: <h:inputText value="#{i.quantity}" style="width:20px"/><br/>
                                  <h:commandButton class="btn btn-default" value="Delete" action="#{shoppingCart.remove(i)}"/>
                             </div>
@@ -67,7 +69,10 @@
                         </div>
                     </ui:repeat>
                         <div class="col-md-3">
-                            <h1>Total: $#{shoppingCart.total}</h1><br/>
+                            <h1>Total: $<h:outputText value="#{shoppingCart.total}">
+                            <f:convertNumber pattern="#0.00" />
+                                </h:outputText>
+                            </h1><br/>
                             <h:commandButton class="btn btn-default" value="Update" action="#{shoppingCart.update()}"/>
                             <h:commandButton class="btn-space btn btn-info" value="Payment" action="#{shoppingCart.payment()}"/><br/>
                             <h3><h:link value="Continue Shopping" outcome="store"/></h3>
