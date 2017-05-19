@@ -510,3 +510,7 @@ blockquote footer {
     height: 180px;
     width: 370px;
 }
+
+#create-blog-form input[type=text] {
+    margin-left: 1em;
+}
