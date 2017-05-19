@@ -55,32 +55,41 @@
                 
             <h1>Continue with Payment?</h1>
                 
-            <form action="https://www.sandbox.paypal.com/cgi-bin/webscr"
-              method="POST">
-            <c:set var="dem" value="1"/>
-            <c:forEach items="#{shoppingCart.cart}" var="i">
-                <input type="hidden"
-                       name="item_number_#{dem}"
-                       value="#{i.p.card_id}"/>
-                <input type="hidden"
-                       name="item_name_#{dem}"
-                       value="#{i.p.figureName}"/>
-                <input type="hidden"
-                       name="quantity_#{dem}"
-                       value="#{i.quantity}"/>
-                <input type="hidden"
-                       name="amount_#{dem}"/>
-                <c:set var="dem" value="#{dem+1}"/>
+            <form target="paypal" action="https://www.sandbox.paypal.com/cgi-bin/webscr"
+            method="post">
+
+            <c:set var="dem" value="1">
+            </c:set>
+
+
+            <input type="hidden" name="cmd" value="_cart" /> 
+            <input type="hidden" name="business" value="ctnw_business1@gmail.com" /> 
+            <input type="hidden" name="upload" value="1" />
+
+            <c:forEach items="#{shoppingCart.cart}" var="ord">
+
+                <input type="hidden" name="item_number_#{dem}"
+                    value="#{ord.p.card_id}" />
+
+
+                <input type="hidden" name="item_name_#{dem}"
+                    value="#{ord.p.figureName}}" />
+
+
+                <input type="hidden" name="quantity_#{dem}" value="#{ord.quantity}" />
+
+                <input type="hidden" name="amount_#{dem}"
+                       value="#{ord.p.cardPrice}" />
+
+                <c:set var="dem" value="#{dem+1}"></c:set>
             </c:forEach>
-            <input type="hidden" name="cmd" value="_cart"/>
-            <input type="hidden" name="business" value="ctnw_business1@gmail.com"/>
-            <input type="hidden" name="return"
-                   value="http://localhost:8080/ShoppingCartTester/faces/success.xhtml"/>
-            <input type="hidden" name="cancel"
-                   value="http://localhost:8080/ShoppingCartTester/faces/fail.xhtml"/>
-            
-            <input type="image" src="http://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"/>
-        </form>
+
+                <input type="hidden" name="currency_code" value="USD"/> 
+
+                <input
+                type="image"
+                src="http://www.paypal.com/en_US/i/btn/btn_xpressCheckout.gif"/>
+            </form>
     
             </div>
             
