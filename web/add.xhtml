@@ -38,8 +38,7 @@
                 </div>
             </div>
         </nav>
-        
-        <div class="content">
+	<div class="content">
             
             <div class="row sec-two">
                 
@@ -54,7 +53,7 @@
                                 <h:inputText  class="form-control" value ="#{productBean.figureName}" size="50" id="name" required = "true" requiredMessage="Enter the name of the image"></h:inputText>
                                 </p>
                                 <p>
-                                 <label for = "location">Image Path(URL)</label><br/>
+                                 <label for = "location">Location of Product(URL)</label><br/>
                                  <h:inputText class="form-control" value ="#{productBean.figurePath}"  size="50" id="location" required ="true" requiredMessage="Enter the URL path of the image" ></h:inputText>
                                 </p>
                                  <p>
@@ -67,7 +66,6 @@
                                 
                                 </p>
 
-
                              </td>
                           </tr>
 
@@ -75,7 +73,8 @@
                           <tr>
                              <td colspan="2">
                                 <div class="rectangle centered"> 
-                                    <h:commandButton  class="rounded" action = "#{productBean.addToDB()}" value= "Add"></h:commandButton> <input type="reset" value="Clear" class="rounded"></input>    
+                                    <h:commandButton  class="rounded" action = "#{productBean.addToDB()}" value= "Add"></h:commandButton>    <h:commandButton  class="rounded" action = "#{productBean.cancel()}" value= "Cancel" immediate="true"></h:commandButton>      
+  
                                 </div>
                              </td>
                           </tr>
@@ -87,7 +86,7 @@
 	</div>
         
         <footer>
-            <div id="footer-nav">
+           <div id="footer-nav">
                 <div class="row" id="footer-description">
                     <div class="col-sm-4">
 			<h3> Want to work for us? </h3>
@@ -113,7 +112,8 @@
             <hr/>
             <p class="copyright">Copyright © 2017 Cards That Never Were, All Rights Reserved.</p>
 	</footer>
-        
+                
+       
     </h:body>
 </html>
 
