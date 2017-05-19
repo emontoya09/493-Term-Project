@@ -50,24 +50,22 @@
                              <td colspan="2">
                                 <p>
                                 <label for = "Item">Name of Item</label><br/>
-                                <h:inputText  class="form-control" value ="#{productBean.figureName}" size="50" id="name"></h:inputText>
-                                <h:message for ="Name of Item"></h:message>
+                                <h:inputText  class="form-control" value ="#{productBean.figureName}" size="50" id="name" required = "true" requiredMessage="Enter the name of the image"></h:inputText>
                                 </p>
                                 <p>
-                                 <label for = "location">Image Path (Link)</label><br/>
-                                 <h:inputText class="form-control" value ="#{productBean.figurePath}"  size="50" id="location" ></h:inputText>
-                                 <h:message for ="Location of Product"></h:message>
+                                 <label for = "location">Image Path(URL)</label><br/>
+                                 <h:inputText class="form-control" value ="#{productBean.figurePath}"  size="50" id="location" required ="true" requiredMessage="Enter the URL path of the image" ></h:inputText>
                                 </p>
                                  <p>
                                  <label for = "Price">Price</label><br/>
-                                 <h:inputText class="form-control"  value ="#{productBean.cardPrice}"  size="50" id="price" ></h:inputText>
-                                 <h:message for ="Price"></h:message>
+                                 <h:inputText class="form-control"  value ="#{productBean.cardPrice}"  size="50" id="price"></h:inputText>
                                 </p>
                                  <p>
-                                 <label for = "desc">Description</label><br/>
-                                 <h:inputText class="form-control" value ="#{productBean.cardDescription}"  size="50" id="description" ></h:inputText>
-                                 <h:message for ="desc"></h:message>
+                                 <label for = "desc">Details</label><br/>
+                                  <h:inputTextarea class="form-control" cols="50" rows="4" value="#{productBean.cardDescription}" a:maxlength ="465" required="true" requiredMessage="Write a description" ></h:inputTextarea>
+                                
                                 </p>
+
 
                              </td>
                           </tr>
